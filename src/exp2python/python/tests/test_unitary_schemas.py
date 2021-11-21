@@ -34,7 +34,7 @@ import sys
 import os
 
 here = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.join(here, "..", "..", "examples", "unitary_schemas"))
+sys.path.append(os.path.join(here, "..", "unitary_schemas"))
 
 from SCL.SCLBase import *
 from SCL.SimpleDataTypes import *
