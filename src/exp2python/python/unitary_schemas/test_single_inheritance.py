@@ -47,33 +47,31 @@ class shape(BaseEntityClass):
 		self.item_name = item_name
 		self.number_of_sides = number_of_sides
 
-	@apply
-	def item_name():
-		def fget( self ):
-			return self._item_name
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument item_name is mandatory and can not be set to None')
-			if not check_type(value,label):
-				self._item_name = label(value)
-			else:
-				self._item_name = value
-		return property(**locals())
+	@property
+	def item_name(self):
+		return self._item_name
+	@item_name.setter
+	def item_name( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument item_name is mandatory and can not be set to None')
+		if not check_type(value,label):
+			self._item_name = label(value)
+		else:
+			self._item_name = value
 
-	@apply
-	def number_of_sides():
-		def fget( self ):
-			return self._number_of_sides
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument number_of_sides is mandatory and can not be set to None')
-			if not check_type(value,INTEGER):
-				self._number_of_sides = INTEGER(value)
-			else:
-				self._number_of_sides = value
-		return property(**locals())
+	@property
+	def number_of_sides(self):
+		return self._number_of_sides
+	@number_of_sides.setter
+	def number_of_sides( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument number_of_sides is mandatory and can not be set to None')
+		if not check_type(value,INTEGER):
+			self._number_of_sides = INTEGER(value)
+		else:
+			self._number_of_sides = value
 
 ####################
  # ENTITY rectangle #
@@ -92,30 +90,28 @@ class rectangle(shape):
 		self.height = height
 		self.width = width
 
-	@apply
-	def height():
-		def fget( self ):
-			return self._height
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument height is mandatory and can not be set to None')
-			if not check_type(value,length_measure):
-				self._height = length_measure(value)
-			else:
-				self._height = value
-		return property(**locals())
+	@property
+	def height(self):
+		return self._height
+	@height.setter
+	def height( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument height is mandatory and can not be set to None')
+		if not check_type(value,length_measure):
+			self._height = length_measure(value)
+		else:
+			self._height = value
 
-	@apply
-	def width():
-		def fget( self ):
-			return self._width
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument width is mandatory and can not be set to None')
-			if not check_type(value,length_measure):
-				self._width = length_measure(value)
-			else:
-				self._width = value
-		return property(**locals())
+	@property
+	def width(self):
+		return self._width
+	@width.setter
+	def width( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument width is mandatory and can not be set to None')
+		if not check_type(value,length_measure):
+			self._width = length_measure(value)
+		else:
+			self._width = value

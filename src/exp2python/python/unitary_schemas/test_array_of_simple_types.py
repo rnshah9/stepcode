@@ -36,44 +36,41 @@ class point(BaseEntityClass):
 		self.arr_string = arr_string
 		self.arr_integer = arr_integer
 
-	@apply
-	def arr_real():
-		def fget( self ):
-			return self._arr_real
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument arr_real is mandatory and can not be set to None')
-			if not check_type(value,ARRAY(1,3,'REAL', scope = schema_scope)):
-				self._arr_real = ARRAY(value)
-			else:
-				self._arr_real = value
-		return property(**locals())
+	@property
+	def arr_real(self):
+		return self._arr_real
+	@arr_real.setter
+	def arr_real( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument arr_real is mandatory and can not be set to None')
+		if not check_type(value,ARRAY(1,3,'REAL', scope = schema_scope)):
+			self._arr_real = ARRAY(value)
+		else:
+			self._arr_real = value
 
-	@apply
-	def arr_string():
-		def fget( self ):
-			return self._arr_string
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument arr_string is mandatory and can not be set to None')
-			if not check_type(value,ARRAY(1,3,'STRING', scope = schema_scope)):
-				self._arr_string = ARRAY(value)
-			else:
-				self._arr_string = value
-		return property(**locals())
+	@property
+	def arr_string(self):
+		return self._arr_string
+	@arr_string.setter
+	def arr_string( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument arr_string is mandatory and can not be set to None')
+		if not check_type(value,ARRAY(1,3,'STRING', scope = schema_scope)):
+			self._arr_string = ARRAY(value)
+		else:
+			self._arr_string = value
 
-	@apply
-	def arr_integer():
-		def fget( self ):
-			return self._arr_integer
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument arr_integer is mandatory and can not be set to None')
-			if not check_type(value,ARRAY(1,None,'INTEGER', scope = schema_scope)):
-				self._arr_integer = ARRAY(value)
-			else:
-				self._arr_integer = value
-		return property(**locals())
+	@property
+	def arr_integer(self):
+		return self._arr_integer
+	@arr_integer.setter
+	def arr_integer( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument arr_integer is mandatory and can not be set to None')
+		if not check_type(value,ARRAY(1,None,'INTEGER', scope = schema_scope)):
+			self._arr_integer = ARRAY(value)
+		else:
+			self._arr_integer = value

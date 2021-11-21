@@ -43,19 +43,18 @@ class weld(BaseEntityClass):
 	def __init__( self , composition, ):
 		self.composition = composition
 
-	@apply
-	def composition():
-		def fget( self ):
-			return self._composition
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument composition is mandatory and can not be set to None')
-			if not check_type(value,STRING):
-				self._composition = STRING(value)
-			else:
-				self._composition = value
-		return property(**locals())
+	@property
+	def composition(self):
+		return self._composition
+	@composition.setter
+	def composition( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument composition is mandatory and can not be set to None')
+		if not check_type(value,STRING):
+			self._composition = STRING(value)
+		else:
+			self._composition = value
 
 ####################
  # ENTITY glue #
@@ -73,33 +72,31 @@ class glue(BaseEntityClass):
 		self.composition = composition
 		self.solvent = solvent
 
-	@apply
-	def composition():
-		def fget( self ):
-			return self._composition
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument composition is mandatory and can not be set to None')
-			if not check_type(value,STRING):
-				self._composition = STRING(value)
-			else:
-				self._composition = value
-		return property(**locals())
+	@property
+	def composition(self):
+		return self._composition
+	@composition.setter
+	def composition( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument composition is mandatory and can not be set to None')
+		if not check_type(value,STRING):
+			self._composition = STRING(value)
+		else:
+			self._composition = value
 
-	@apply
-	def solvent():
-		def fget( self ):
-			return self._solvent
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument solvent is mandatory and can not be set to None')
-			if not check_type(value,STRING):
-				self._solvent = STRING(value)
-			else:
-				self._solvent = value
-		return property(**locals())
+	@property
+	def solvent(self):
+		return self._solvent
+	@solvent.setter
+	def solvent( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument solvent is mandatory and can not be set to None')
+		if not check_type(value,STRING):
+			self._solvent = STRING(value)
+		else:
+			self._solvent = value
 
 ####################
  # ENTITY wall_mounting #
@@ -121,47 +118,44 @@ class wall_mounting(BaseEntityClass):
 		self.on = on
 		self.using = using
 
-	@apply
-	def mounting():
-		def fget( self ):
-			return self._mounting
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument mounting is mandatory and can not be set to None')
-			if not check_type(value,STRING):
-				self._mounting = STRING(value)
-			else:
-				self._mounting = value
-		return property(**locals())
+	@property
+	def mounting(self):
+		return self._mounting
+	@mounting.setter
+	def mounting( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument mounting is mandatory and can not be set to None')
+		if not check_type(value,STRING):
+			self._mounting = STRING(value)
+		else:
+			self._mounting = value
 
-	@apply
-	def on():
-		def fget( self ):
-			return self._on
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument on is mandatory and can not be set to None')
-			if not check_type(value,STRING):
-				self._on = STRING(value)
-			else:
-				self._on = value
-		return property(**locals())
+	@property
+	def on(self):
+		return self._on
+	@on.setter
+	def on( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument on is mandatory and can not be set to None')
+		if not check_type(value,STRING):
+			self._on = STRING(value)
+		else:
+			self._on = value
 
-	@apply
-	def using():
-		def fget( self ):
-			return self._using
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument using is mandatory and can not be set to None')
-			if not check_type(value,attachment_method):
-				self._using = attachment_method(value)
-			else:
-				self._using = value
-		return property(**locals())
+	@property
+	def using(self):
+		return self._using
+	@using.setter
+	def using( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument using is mandatory and can not be set to None')
+		if not check_type(value,attachment_method):
+			self._using = attachment_method(value)
+		else:
+			self._using = value
 
 ####################
  # ENTITY screw #
@@ -179,33 +173,31 @@ class screw(BaseEntityClass):
 		self.body_length = body_length
 		self.pitch = pitch
 
-	@apply
-	def body_length():
-		def fget( self ):
-			return self._body_length
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument body_length is mandatory and can not be set to None')
-			if not check_type(value,REAL):
-				self._body_length = REAL(value)
-			else:
-				self._body_length = value
-		return property(**locals())
+	@property
+	def body_length(self):
+		return self._body_length
+	@body_length.setter
+	def body_length( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument body_length is mandatory and can not be set to None')
+		if not check_type(value,REAL):
+			self._body_length = REAL(value)
+		else:
+			self._body_length = value
 
-	@apply
-	def pitch():
-		def fget( self ):
-			return self._pitch
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument pitch is mandatory and can not be set to None')
-			if not check_type(value,REAL):
-				self._pitch = REAL(value)
-			else:
-				self._pitch = value
-		return property(**locals())
+	@property
+	def pitch(self):
+		return self._pitch
+	@pitch.setter
+	def pitch( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument pitch is mandatory and can not be set to None')
+		if not check_type(value,REAL):
+			self._pitch = REAL(value)
+		else:
+			self._pitch = value
 
 ####################
  # ENTITY nail #
@@ -223,30 +215,28 @@ class nail(BaseEntityClass):
 		self.body_length = body_length
 		self.head_area = head_area
 
-	@apply
-	def body_length():
-		def fget( self ):
-			return self._body_length
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument body_length is mandatory and can not be set to None')
-			if not check_type(value,REAL):
-				self._body_length = REAL(value)
-			else:
-				self._body_length = value
-		return property(**locals())
+	@property
+	def body_length(self):
+		return self._body_length
+	@body_length.setter
+	def body_length( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument body_length is mandatory and can not be set to None')
+		if not check_type(value,REAL):
+			self._body_length = REAL(value)
+		else:
+			self._body_length = value
 
-	@apply
-	def head_area():
-		def fget( self ):
-			return self._head_area
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument head_area is mandatory and can not be set to None')
-			if not check_type(value,REAL):
-				self._head_area = REAL(value)
-			else:
-				self._head_area = value
-		return property(**locals())
+	@property
+	def head_area(self):
+		return self._head_area
+	@head_area.setter
+	def head_area( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument head_area is mandatory and can not be set to None')
+		if not check_type(value,REAL):
+			self._head_area = REAL(value)
+		else:
+			self._head_area = value

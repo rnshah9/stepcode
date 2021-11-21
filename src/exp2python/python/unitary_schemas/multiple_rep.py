@@ -87,47 +87,44 @@ class representation_relationship(BaseEntityClass):
 		self.rep_1 = rep_1
 		self.rep_2 = rep_2
 
-	@apply
-	def name():
-		def fget( self ):
-			return self._name
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument name is mandatory and can not be set to None')
-			if not check_type(value,label):
-				self._name = label(value)
-			else:
-				self._name = value
-		return property(**locals())
+	@property
+	def name(self):
+		return self._name
+	@name.setter
+	def name( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument name is mandatory and can not be set to None')
+		if not check_type(value,label):
+			self._name = label(value)
+		else:
+			self._name = value
 
-	@apply
-	def rep_1():
-		def fget( self ):
-			return self._rep_1
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument rep_1 is mandatory and can not be set to None')
-			if not check_type(value,representation):
-				self._rep_1 = representation(value)
-			else:
-				self._rep_1 = value
-		return property(**locals())
+	@property
+	def rep_1(self):
+		return self._rep_1
+	@rep_1.setter
+	def rep_1( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument rep_1 is mandatory and can not be set to None')
+		if not check_type(value,representation):
+			self._rep_1 = representation(value)
+		else:
+			self._rep_1 = value
 
-	@apply
-	def rep_2():
-		def fget( self ):
-			return self._rep_2
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument rep_2 is mandatory and can not be set to None')
-			if not check_type(value,representation):
-				self._rep_2 = representation(value)
-			else:
-				self._rep_2 = value
-		return property(**locals())
+	@property
+	def rep_2(self):
+		return self._rep_2
+	@rep_2.setter
+	def rep_2( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument rep_2 is mandatory and can not be set to None')
+		if not check_type(value,representation):
+			self._rep_2 = representation(value)
+		else:
+			self._rep_2 = value
 
 ####################
  # ENTITY shape_representation_relationship #
@@ -165,47 +162,45 @@ class representation(BaseEntityClass):
 		self.items = items
 		self.context_of_items = context_of_items
 
-	@apply
-	def name():
-		def fget( self ):
-			return self._name
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument name is mandatory and can not be set to None')
-			if not check_type(value,label):
-				self._name = label(value)
-			else:
-				self._name = value
-		return property(**locals())
+	@property
+	def name(self):
+		return self._name
+	@name.setter
+	def name( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument name is mandatory and can not be set to None')
+		if not check_type(value,label):
+			self._name = label(value)
+		else:
+			self._name = value
 
-	@apply
-	def items():
-		def fget( self ):
-			return self._items
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument items is mandatory and can not be set to None')
-			if not check_type(value,SET(1,None,'STRING', scope = schema_scope)):
-				self._items = SET(value)
-			else:
-				self._items = value
-		return property(**locals())
+	@property
+	def items(self):
+		return self._items
+	@items.setter
+	def items( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument items is mandatory and can not be set to None')
+		if not check_type(value,SET(1,None,'STRING', scope = schema_scope)):
+			self._items = SET(value)
+		else:
+			self._items = value
 
-	@apply
-	def context_of_items():
-		def fget( self ):
-			return self._context_of_items
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument context_of_items is mandatory and can not be set to None')
-			if not check_type(value,representation_context):
-				self._context_of_items = representation_context(value)
-			else:
-				self._context_of_items = value
-		return property(**locals())
+	@property
+	def context_of_items(self):
+		return self._context_of_items
+	@context_of_items.setter
+	def context_of_items( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument context_of_items is mandatory and can not be set to None')
+		if not check_type(value,representation_context):
+			self._context_of_items = representation_context(value)
+		else:
+			self._context_of_items = value
+
 	def wr1(self):
 		eval_wr1_wr = (SIZEOF(USEDIN(self,'MULTIPLE_REP.'  +  'ID_ATTRIBUTE.IDENTIFIED_ITEM'))  <=  1)
 		if not eval_wr1_wr:
@@ -237,33 +232,32 @@ class property_definition(BaseEntityClass):
 		self.name = name
 		self.definition = definition
 
-	@apply
-	def name():
-		def fget( self ):
-			return self._name
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument name is mandatory and can not be set to None')
-			if not check_type(value,label):
-				self._name = label(value)
-			else:
-				self._name = value
-		return property(**locals())
+	@property
+	def name(self):
+		return self._name
+	@name.setter
+	def name( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument name is mandatory and can not be set to None')
+		if not check_type(value,label):
+			self._name = label(value)
+		else:
+			self._name = value
 
-	@apply
-	def definition():
-		def fget( self ):
-			return self._definition
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument definition is mandatory and can not be set to None')
-			if not check_type(value,characterized_definition):
-				self._definition = characterized_definition(value)
-			else:
-				self._definition = value
-		return property(**locals())
+	@property
+	def definition(self):
+		return self._definition
+	@definition.setter
+	def definition( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument definition is mandatory and can not be set to None')
+		if not check_type(value,characterized_definition):
+			self._definition = characterized_definition(value)
+		else:
+			self._definition = value
+
 	def wr1(self):
 		eval_wr1_wr = (SIZEOF(USEDIN(self,'MULTIPLE_REP.'  +  'ID_ATTRIBUTE.IDENTIFIED_ITEM'))  <=  1)
 		if not eval_wr1_wr:
@@ -284,19 +278,19 @@ class context_dependent_shape_representation(BaseEntityClass):
 	def __init__( self , representation_relation, ):
 		self.representation_relation = representation_relation
 
-	@apply
-	def representation_relation():
-		def fget( self ):
-			return self._representation_relation
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument representation_relation is mandatory and can not be set to None')
-			if not check_type(value,shape_representation_relationship):
-				self._representation_relation = shape_representation_relationship(value)
-			else:
-				self._representation_relation = value
-		return property(**locals())
+	@property
+	def representation_relation(self):
+		return self._representation_relation
+	@representation_relation.setter
+	def representation_relation( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument representation_relation is mandatory and can not be set to None')
+		if not check_type(value,shape_representation_relationship):
+			self._representation_relation = shape_representation_relationship(value)
+		else:
+			self._representation_relation = value
+
 	def wr2(self):
 		eval_wr2_wr = (SIZEOF(USEDIN(self,'MULTIPLE_REP.'  +  'DESCRIPTION_ATTRIBUTE.DESCRIBED_ITEM'))  <=  1)
 		if not eval_wr2_wr:
@@ -335,15 +329,15 @@ class component_2d_location(context_dependent_shape_representation,shape_represe
 		shape_representation_relationship.__init__(self , inherited1__name , inherited2__rep_1 , inherited3__rep_2 , )
 		definitional_representation_relationship.__init__(self , inherited4__name , inherited5__rep_1 , inherited6__rep_2 , )
 
-	@apply
-	def context_dependent_shape_representation_representation_relation():
-		def fget( self ):
-			attribute_eval = self
-			return attribute_eval
-		def fset( self, value ):
-		# DERIVED argument
-			raise AssertionError('Argument context_dependent_shape_representation_representation_relation is DERIVED. It is computed and can not be set to any value')
-		return property(**locals())
+	@property
+	def context_dependent_shape_representation_representation_relation(self):
+		attribute_eval = self
+		return attribute_eval
+	@context_dependent_shape_representation_representation_relation.setter
+	def context_dependent_shape_representation_representation_relation( self, value ):
+	# DERIVED argument
+		raise AssertionError('Argument context_dependent_shape_representation_representation_relation is DERIVED. It is computed and can not be set to any value')
+
 	def wr1(self):
 		eval_wr1_wr = (self.self.representation_relationship.self.name  ==  'component 2d location')
 		if not eval_wr1_wr:

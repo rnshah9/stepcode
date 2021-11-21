@@ -51,67 +51,62 @@ class circle(BaseEntityClass):
 		self.radius = radius
 		self.axis = axis
 
-	@apply
-	def centre():
-		def fget( self ):
-			return self._centre
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument centre is mandatory and can not be set to None')
-			if not check_type(value,point):
-				self._centre = point(value)
-			else:
-				self._centre = value
-		return property(**locals())
+	@property
+	def centre(self):
+		return self._centre
+	@centre.setter
+	def centre( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument centre is mandatory and can not be set to None')
+		if not check_type(value,point):
+			self._centre = point(value)
+		else:
+			self._centre = value
 
-	@apply
-	def radius():
-		def fget( self ):
-			return self._radius
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument radius is mandatory and can not be set to None')
-			if not check_type(value,REAL):
-				self._radius = REAL(value)
-			else:
-				self._radius = value
-		return property(**locals())
+	@property
+	def radius(self):
+		return self._radius
+	@radius.setter
+	def radius( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument radius is mandatory and can not be set to None')
+		if not check_type(value,REAL):
+			self._radius = REAL(value)
+		else:
+			self._radius = value
 
-	@apply
-	def axis():
-		def fget( self ):
-			return self._axis
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument axis is mandatory and can not be set to None')
-			if not check_type(value,vector):
-				self._axis = vector(value)
-			else:
-				self._axis = value
-		return property(**locals())
+	@property
+	def axis(self):
+		return self._axis
+	@axis.setter
+	def axis( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument axis is mandatory and can not be set to None')
+		if not check_type(value,vector):
+			self._axis = vector(value)
+		else:
+			self._axis = value
 
-	@apply
-	def area():
-		def fget( self ):
-			attribute_eval = ( PI   *  (self.radius  **  2))
-			return attribute_eval
-		def fset( self, value ):
-		# DERIVED argument
-			raise AssertionError('Argument area is DERIVED. It is computed and can not be set to any value')
-		return property(**locals())
+	@property
+	def area(self):
+		attribute_eval = ( PI   *  (self.radius  **  2))
+		return attribute_eval
+	@area.setter
+	def area( self, value ):
+	# DERIVED argument
+		raise AssertionError('Argument area is DERIVED. It is computed and can not be set to any value')
 
-	@apply
-	def perimeter():
-		def fget( self ):
-			attribute_eval = ((2  *   PI )  *  self.radius)
-			return attribute_eval
-		def fset( self, value ):
-		# DERIVED argument
-			raise AssertionError('Argument perimeter is DERIVED. It is computed and can not be set to any value')
-		return property(**locals())
+	@property
+	def perimeter(self):
+		attribute_eval = ((2  *   PI )  *  self.radius)
+		return attribute_eval
+	@perimeter.setter
+	def perimeter( self, value ):
+	# DERIVED argument
+		raise AssertionError('Argument perimeter is DERIVED. It is computed and can not be set to any value')
 
 ####################
  # ENTITY point #

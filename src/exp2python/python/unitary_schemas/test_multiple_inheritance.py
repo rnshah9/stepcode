@@ -92,173 +92,161 @@ class address(BaseEntityClass):
 		self.electronic_mail_address = electronic_mail_address
 		self.telex_number = telex_number
 
-	@apply
-	def internal_location():
-		def fget( self ):
-			return self._internal_location
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._internal_location = label(value)
-				else:
-					self._internal_location = value
+	@property
+	def internal_location(self):
+		return self._internal_location
+	@internal_location.setter
+	def internal_location( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._internal_location = label(value)
 			else:
 				self._internal_location = value
-		return property(**locals())
+		else:
+			self._internal_location = value
 
-	@apply
-	def street_number():
-		def fget( self ):
-			return self._street_number
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._street_number = label(value)
-				else:
-					self._street_number = value
+	@property
+	def street_number(self):
+		return self._street_number
+	@street_number.setter
+	def street_number( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._street_number = label(value)
 			else:
 				self._street_number = value
-		return property(**locals())
+		else:
+			self._street_number = value
 
-	@apply
-	def street():
-		def fget( self ):
-			return self._street
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._street = label(value)
-				else:
-					self._street = value
+	@property
+	def street(self):
+		return self._street
+	@street.setter
+	def street( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._street = label(value)
 			else:
 				self._street = value
-		return property(**locals())
+		else:
+			self._street = value
 
-	@apply
-	def postal_box():
-		def fget( self ):
-			return self._postal_box
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._postal_box = label(value)
-				else:
-					self._postal_box = value
+	@property
+	def postal_box(self):
+		return self._postal_box
+	@postal_box.setter
+	def postal_box( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._postal_box = label(value)
 			else:
 				self._postal_box = value
-		return property(**locals())
+		else:
+			self._postal_box = value
 
-	@apply
-	def town():
-		def fget( self ):
-			return self._town
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._town = label(value)
-				else:
-					self._town = value
+	@property
+	def town(self):
+		return self._town
+	@town.setter
+	def town( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._town = label(value)
 			else:
 				self._town = value
-		return property(**locals())
+		else:
+			self._town = value
 
-	@apply
-	def region():
-		def fget( self ):
-			return self._region
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._region = label(value)
-				else:
-					self._region = value
+	@property
+	def region(self):
+		return self._region
+	@region.setter
+	def region( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._region = label(value)
 			else:
 				self._region = value
-		return property(**locals())
+		else:
+			self._region = value
 
-	@apply
-	def postal_code():
-		def fget( self ):
-			return self._postal_code
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._postal_code = label(value)
-				else:
-					self._postal_code = value
+	@property
+	def postal_code(self):
+		return self._postal_code
+	@postal_code.setter
+	def postal_code( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._postal_code = label(value)
 			else:
 				self._postal_code = value
-		return property(**locals())
+		else:
+			self._postal_code = value
 
-	@apply
-	def country():
-		def fget( self ):
-			return self._country
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._country = label(value)
-				else:
-					self._country = value
+	@property
+	def country(self):
+		return self._country
+	@country.setter
+	def country( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._country = label(value)
 			else:
 				self._country = value
-		return property(**locals())
+		else:
+			self._country = value
 
-	@apply
-	def facsimile_number():
-		def fget( self ):
-			return self._facsimile_number
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._facsimile_number = label(value)
-				else:
-					self._facsimile_number = value
+	@property
+	def facsimile_number(self):
+		return self._facsimile_number
+	@facsimile_number.setter
+	def facsimile_number( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._facsimile_number = label(value)
 			else:
 				self._facsimile_number = value
-		return property(**locals())
+		else:
+			self._facsimile_number = value
 
-	@apply
-	def telephone_number():
-		def fget( self ):
-			return self._telephone_number
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._telephone_number = label(value)
-				else:
-					self._telephone_number = value
+	@property
+	def telephone_number(self):
+		return self._telephone_number
+	@telephone_number.setter
+	def telephone_number( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._telephone_number = label(value)
 			else:
 				self._telephone_number = value
-		return property(**locals())
+		else:
+			self._telephone_number = value
 
-	@apply
-	def electronic_mail_address():
-		def fget( self ):
-			return self._electronic_mail_address
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._electronic_mail_address = label(value)
-				else:
-					self._electronic_mail_address = value
+	@property
+	def electronic_mail_address(self):
+		return self._electronic_mail_address
+	@electronic_mail_address.setter
+	def electronic_mail_address( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._electronic_mail_address = label(value)
 			else:
 				self._electronic_mail_address = value
-		return property(**locals())
+		else:
+			self._electronic_mail_address = value
 
-	@apply
-	def telex_number():
-		def fget( self ):
-			return self._telex_number
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._telex_number = label(value)
-				else:
-					self._telex_number = value
+	@property
+	def telex_number(self):
+		return self._telex_number
+	@telex_number.setter
+	def telex_number( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._telex_number = label(value)
 			else:
 				self._telex_number = value
-		return property(**locals())
+		else:
+			self._telex_number = value
 
 ####################
  # ENTITY personal_address #
@@ -277,33 +265,31 @@ class personal_address(address):
 		self.people = people
 		self.description = description
 
-	@apply
+	@property
 	def people():
-		def fget( self ):
-			return self._people
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument people is mandatory and can not be set to None')
-			if not check_type(value,SET(1,None,'person', scope = schema_scope)):
-				self._people = SET(value)
-			else:
-				self._people = value
-		return property(**locals())
+		return self._people
+	@people.setter
+	def people( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument people is mandatory and can not be set to None')
+		if not check_type(value,SET(1,None,'person', scope = schema_scope)):
+			self._people = SET(value)
+		else:
+			self._people = value
 
-	@apply
+	@property
 	def description():
-		def fget( self ):
-			return self._description
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,text):
-					self._description = text(value)
-				else:
-					self._description = value
+		return self._description
+	@description.setter
+	def description( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,text):
+				self._description = text(value)
 			else:
 				self._description = value
-		return property(**locals())
+		else:
+			self._description = value
 
 ####################
  # ENTITY organizational_address #
@@ -322,33 +308,31 @@ class organizational_address(address):
 		self.organizations = organizations
 		self.description = description
 
-	@apply
+	@property
 	def organizations():
-		def fget( self ):
-			return self._organizations
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument organizations is mandatory and can not be set to None')
-			if not check_type(value,SET(1,None,'organization', scope = schema_scope)):
-				self._organizations = SET(value)
-			else:
-				self._organizations = value
-		return property(**locals())
+		return self._organizations
+	@organizations.setter
+	def organizations( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument organizations is mandatory and can not be set to None')
+		if not check_type(value,SET(1,None,'organization', scope = schema_scope)):
+			self._organizations = SET(value)
+		else:
+			self._organizations = value
 
-	@apply
+	@property
 	def description():
-		def fget( self ):
-			return self._description
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,text):
-					self._description = text(value)
-				else:
-					self._description = value
+		return self._description
+	@description.setter
+	def description( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,text):
+				self._description = text(value)
 			else:
 				self._description = value
-		return property(**locals())
+		else:
+			self._description = value
 
 ####################
  # ENTITY person #
@@ -382,89 +366,84 @@ class person(BaseEntityClass):
 		self.prefix_titles = prefix_titles
 		self.suffix_titles = suffix_titles
 
-	@apply
-	def id():
-		def fget( self ):
-			return self._id
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument id is mandatory and can not be set to None')
-			if not check_type(value,identifier):
-				self._id = identifier(value)
-			else:
-				self._id = value
-		return property(**locals())
+	@property
+	def id(self):
+		return self._id
+	@id.setter
+	def id( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument id is mandatory and can not be set to None')
+		if not check_type(value,identifier):
+			self._id = identifier(value)
+		else:
+			self._id = value
 
-	@apply
-	def last_name():
-		def fget( self ):
-			return self._last_name
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._last_name = label(value)
-				else:
-					self._last_name = value
+	@property
+	def last_name(self):
+		return self._last_name
+	@last_name.setter
+	def last_name( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._last_name = label(value)
 			else:
 				self._last_name = value
-		return property(**locals())
+		else:
+			self._last_name = value
 
-	@apply
-	def first_name():
-		def fget( self ):
-			return self._first_name
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._first_name = label(value)
-				else:
-					self._first_name = value
+	@property
+	def first_name(self):
+		return self._first_name
+	@first_name.setter
+	def first_name( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._first_name = label(value)
 			else:
 				self._first_name = value
-		return property(**locals())
+		else:
+			self._first_name = value
 
-	@apply
-	def middle_names():
-		def fget( self ):
-			return self._middle_names
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,LIST(1,None,'STRING', scope = schema_scope)):
-					self._middle_names = LIST(value)
-				else:
-					self._middle_names = value
+	@property
+	def middle_names(self):
+		return self._middle_names
+	@middle_names.setter
+	def middle_names( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,LIST(1,None,'STRING', scope = schema_scope)):
+				self._middle_names = LIST(value)
 			else:
 				self._middle_names = value
-		return property(**locals())
+		else:
+			self._middle_names = value
 
-	@apply
-	def prefix_titles():
-		def fget( self ):
-			return self._prefix_titles
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,LIST(1,None,'STRING', scope = schema_scope)):
-					self._prefix_titles = LIST(value)
-				else:
-					self._prefix_titles = value
+	@property
+	def prefix_titles(self):
+		return self._prefix_titles
+	@prefix_titles.setter
+	def prefix_titles( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,LIST(1,None,'STRING', scope = schema_scope)):
+				self._prefix_titles = LIST(value)
 			else:
 				self._prefix_titles = value
-		return property(**locals())
+		else:
+			self._prefix_titles = value
 
-	@apply
-	def suffix_titles():
-		def fget( self ):
-			return self._suffix_titles
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,LIST(1,None,'STRING', scope = schema_scope)):
-					self._suffix_titles = LIST(value)
-				else:
-					self._suffix_titles = value
+	@property
+	def suffix_titles(self):
+		return self._suffix_titles
+	@suffix_titles
+	def suffix_titles( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,LIST(1,None,'STRING', scope = schema_scope)):
+				self._suffix_titles = LIST(value)
 			else:
 				self._suffix_titles = value
-		return property(**locals())
+		else:
+			self._suffix_titles = value
+
 	def wr1(self):
 		eval_wr1_wr = (EXISTS(self.last_name)  or  EXISTS(self.first_name))
 		if not eval_wr1_wr:
@@ -493,47 +472,44 @@ class organization(BaseEntityClass):
 		self.name = name
 		self.description = description
 
-	@apply
-	def id():
-		def fget( self ):
-			return self._id
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,identifier):
-					self._id = identifier(value)
-				else:
-					self._id = value
+	@property
+	def id(self):
+		return self._id
+	@id.setter
+	def id( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,identifier):
+				self._id = identifier(value)
 			else:
 				self._id = value
-		return property(**locals())
+		else:
+			self._id = value
 
-	@apply
-	def name():
-		def fget( self ):
-			return self._name
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument name is mandatory and can not be set to None')
-			if not check_type(value,label):
-				self._name = label(value)
-			else:
-				self._name = value
-		return property(**locals())
+	@property
+	def name(self):
+		return self._name
+	@name.setter
+	def name( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument name is mandatory and can not be set to None')
+		if not check_type(value,label):
+			self._name = label(value)
+		else:
+			self._name = value
 
-	@apply
-	def description():
-		def fget( self ):
-			return self._description
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,text):
-					self._description = text(value)
-				else:
-					self._description = value
+	@property
+	def description(self):
+		return self._description
+	@description.setter
+	def description( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,text):
+				self._description = text(value)
 			else:
 				self._description = value
-		return property(**locals())
+		else:
+			self._description = value
 
 ####################
  # ENTITY person_and_organization_address #
@@ -553,30 +529,28 @@ class person_and_organization_address(organizational_address,personal_address):
 		self.organizational_address_organizations = organizational_address_organizations
 		self.personal_address_people = personal_address_people
 
-	@apply
-	def organizational_address_organizations():
-		def fget( self ):
-			return self._organizational_address_organizations
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument organizational_address_organizations is mandatory and can not be set to None')
-			if not check_type(value,SET(1,1,'organization', scope = schema_scope)):
-				self._organizational_address_organizations = SET(value)
-			else:
-				self._organizational_address_organizations = value
-		return property(**locals())
+	@property
+	def organizational_address_organizations(self):
+		return self._organizational_address_organizations
+	@organizational_address_organizations.setter
+	def organizational_address_organizations( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument organizational_address_organizations is mandatory and can not be set to None')
+		if not check_type(value,SET(1,1,'organization', scope = schema_scope)):
+			self._organizational_address_organizations = SET(value)
+		else:
+			self._organizational_address_organizations = value
 
-	@apply
-	def personal_address_people():
-		def fget( self ):
-			return self._personal_address_people
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument personal_address_people is mandatory and can not be set to None')
-			if not check_type(value,SET(1,1,'person', scope = schema_scope)):
-				self._personal_address_people = SET(value)
-			else:
-				self._personal_address_people = value
-		return property(**locals())
+	@property
+	def personal_address_people(self):
+		return self._personal_address_people
+	@personal_address_people.setter
+	def personal_address_people( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument personal_address_people is mandatory and can not be set to None')
+		if not check_type(value,SET(1,1,'person', scope = schema_scope)):
+			self._personal_address_people = SET(value)
+		else:
+			self._personal_address_people = value

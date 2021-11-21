@@ -41,47 +41,45 @@ class unit_vector(BaseEntityClass):
 		self.b = b
 		self.c = c
 
-	@apply
-	def a():
-		def fget( self ):
-			return self._a
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument a is mandatory and can not be set to None')
-			if not check_type(value,REAL):
-				self._a = REAL(value)
-			else:
-				self._a = value
-		return property(**locals())
+	@property
+	def a(self):
+		return self._a
+	@a.setter
+	def a( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument a is mandatory and can not be set to None')
+		if not check_type(value,REAL):
+			self._a = REAL(value)
+		else:
+			self._a = value
 
-	@apply
-	def b():
-		def fget( self ):
-			return self._b
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument b is mandatory and can not be set to None')
-			if not check_type(value,REAL):
-				self._b = REAL(value)
-			else:
-				self._b = value
-		return property(**locals())
+	@property
+	def b(self):
+		return self._b
+	@b.setter
+	def b( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument b is mandatory and can not be set to None')
+		if not check_type(value,REAL):
+			self._b = REAL(value)
+		else:
+			self._b = value
 
-	@apply
-	def c():
-		def fget( self ):
-			return self._c
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument c is mandatory and can not be set to None')
-			if not check_type(value,REAL):
-				self._c = REAL(value)
-			else:
-				self._c = value
-		return property(**locals())
+	@property
+	def c(self):
+		return self._c
+	@c.setter
+	def c( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument c is mandatory and can not be set to None')
+		if not check_type(value,REAL):
+			self._c = REAL(value)
+		else:
+			self._c = value
+
 	def length_1(self):
 		eval_length_1_wr = ((((self.a  **  2)  +  (self.b  **  2))  +  (self.c  **  2))  ==  1)
 		if not eval_length_1_wr:
@@ -146,173 +144,162 @@ class address(BaseEntityClass):
 		self.electronic_mail_address = electronic_mail_address
 		self.telex_number = telex_number
 
-	@apply
-	def internal_location():
-		def fget( self ):
-			return self._internal_location
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._internal_location = label(value)
-				else:
-					self._internal_location = value
+	@property
+	def internal_location(self):
+		return self._internal_location
+	@internal_location.setter
+	def internal_location( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._internal_location = label(value)
 			else:
 				self._internal_location = value
-		return property(**locals())
+		else:
+			self._internal_location = value
 
-	@apply
-	def street_number():
-		def fget( self ):
-			return self._street_number
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._street_number = label(value)
-				else:
-					self._street_number = value
+	@property
+	def street_number(self):
+		return self._street_number
+	@street_number.setter
+	def street_number( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._street_number = label(value)
 			else:
 				self._street_number = value
-		return property(**locals())
+		else:
+			self._street_number = value
 
-	@apply
-	def street():
-		def fget( self ):
-			return self._street
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._street = label(value)
-				else:
-					self._street = value
+	@property
+	def street(self):
+		return self._street
+	@street.setter
+	def street( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._street = label(value)
 			else:
 				self._street = value
-		return property(**locals())
+		else:
+			self._street = value
 
-	@apply
-	def postal_box():
-		def fget( self ):
-			return self._postal_box
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._postal_box = label(value)
-				else:
-					self._postal_box = value
+	@property
+	def postal_box(self):
+		return self._postal_box
+	@postal_box.setter
+	def postal_box( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._postal_box = label(value)
 			else:
 				self._postal_box = value
-		return property(**locals())
+		else:
+			self._postal_box = value
 
-	@apply
-	def town():
-		def fget( self ):
-			return self._town
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._town = label(value)
-				else:
-					self._town = value
+	@property
+	def town(self):
+		return self._town
+	@town.setter
+	def town( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._town = label(value)
 			else:
 				self._town = value
-		return property(**locals())
+		else:
+			self._town = value
 
-	@apply
-	def region():
-		def fget( self ):
-			return self._region
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._region = label(value)
-				else:
-					self._region = value
+	@property
+	def region(self):
+		return self._region
+	@region.setter
+	def region( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._region = label(value)
 			else:
 				self._region = value
-		return property(**locals())
+		else:
+			self._region = value
 
-	@apply
-	def postal_code():
-		def fget( self ):
-			return self._postal_code
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._postal_code = label(value)
-				else:
-					self._postal_code = value
+	@property
+	def postal_code(self):
+		return self._postal_code
+	@postal_code.setter
+	def postal_code( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._postal_code = label(value)
 			else:
 				self._postal_code = value
-		return property(**locals())
+		else:
+			self._postal_code = value
 
-	@apply
-	def country():
-		def fget( self ):
-			return self._country
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._country = label(value)
-				else:
-					self._country = value
+	@property
+	def country(self):
+		return self._country
+	@country.setter
+	def country( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._country = label(value)
 			else:
 				self._country = value
-		return property(**locals())
+		else:
+			self._country = value
 
-	@apply
-	def facsimile_number():
-		def fget( self ):
-			return self._facsimile_number
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._facsimile_number = label(value)
-				else:
-					self._facsimile_number = value
+	@property
+	def facsimile_number(self):
+		return self._facsimile_number
+	@facsimile_number.setter
+	def facsimile_number( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._facsimile_number = label(value)
 			else:
 				self._facsimile_number = value
-		return property(**locals())
+		else:
+			self._facsimile_number = value
 
-	@apply
-	def telephone_number():
-		def fget( self ):
-			return self._telephone_number
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._telephone_number = label(value)
-				else:
-					self._telephone_number = value
+	@property
+	def telephone_number(self):
+		return self._telephone_number
+	@telephone_number.setter
+	def telephone_number( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._telephone_number = label(value)
 			else:
 				self._telephone_number = value
-		return property(**locals())
+		else:
+			self._telephone_number = value
 
-	@apply
-	def electronic_mail_address():
-		def fget( self ):
-			return self._electronic_mail_address
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._electronic_mail_address = label(value)
-				else:
-					self._electronic_mail_address = value
+	@property
+	def electronic_mail_address(self):
+		return self._electronic_mail_address
+	@electronic_mail_address.setter
+	def electronic_mail_address( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._electronic_mail_address = label(value)
 			else:
 				self._electronic_mail_address = value
-		return property(**locals())
+		else:
+			self._electronic_mail_address = value
 
-	@apply
-	def telex_number():
-		def fget( self ):
-			return self._telex_number
-		def fset( self, value ):
-			if value != None: # OPTIONAL attribute
-				if not check_type(value,label):
-					self._telex_number = label(value)
-				else:
-					self._telex_number = value
+	@property
+	def telex_number(self):
+		return self._telex_number
+	@telex_number.setter
+	def telex_number( self, value ):
+		if value != None: # OPTIONAL attribute
+			if not check_type(value,label):
+				self._telex_number = label(value)
 			else:
 				self._telex_number = value
-		return property(**locals())
+		else:
+			self._telex_number = value
+
 	def wr1(self):
 		eval_wr1_wr = (((((((((((EXISTS(self.internal_location)  or  EXISTS(self.street_number))  or  EXISTS(self.street))  or  EXISTS(self.postal_box))  or  EXISTS(self.town))  or  EXISTS(self.region))  or  EXISTS(self.postal_code))  or  EXISTS(self.country))  or  EXISTS(self.facsimile_number))  or  EXISTS(self.telephone_number))  or  EXISTS(self.electronic_mail_address))  or  EXISTS(self.telex_number))
 		if not eval_wr1_wr:

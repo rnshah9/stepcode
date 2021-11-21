@@ -51,44 +51,41 @@ class line(BaseEntityClass):
 		self.other_param = other_param
 		self.and_another = and_another
 
-	@apply
-	def line_length():
-		def fget( self ):
-			return self._line_length
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument line_length is mandatory and can not be set to None')
-			if not check_type(value,measure):
-				self._line_length = measure(value)
-			else:
-				self._line_length = value
-		return property(**locals())
+	@property
+	def line_length(self):
+		return self._line_length
+	@line_length.setter
+	def line_length( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument line_length is mandatory and can not be set to None')
+		if not check_type(value,measure):
+			self._line_length = measure(value)
+		else:
+			self._line_length = value
 
-	@apply
-	def other_param():
-		def fget( self ):
-			return self._other_param
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument other_param is mandatory and can not be set to None')
-			if not check_type(value,type3):
-				self._other_param = type3(value)
-			else:
-				self._other_param = value
-		return property(**locals())
+	@property
+	def other_param(self):
+		return self._other_param
+	@other_param.setter
+	def other_param( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument other_param is mandatory and can not be set to None')
+		if not check_type(value,type3):
+			self._other_param = type3(value)
+		else:
+			self._other_param = value
 
-	@apply
-	def and_another():
-		def fget( self ):
-			return self._and_another
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument and_another is mandatory and can not be set to None')
-			if not check_type(value,REAL):
-				self._and_another = REAL(value)
-			else:
-				self._and_another = value
-		return property(**locals())
+	@property
+	def and_another(self):
+		return self._and_another
+	@and_another.setter
+	def and_another( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument and_another is mandatory and can not be set to None')
+		if not check_type(value,REAL):
+			self._and_another = REAL(value)
+		else:
+			self._and_another = value

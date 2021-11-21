@@ -28,16 +28,15 @@ class point(BaseEntityClass):
 	def __init__( self , coords, ):
 		self.coords = coords
 
-	@apply
-	def coords():
-		def fget( self ):
-			return self._coords
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument coords is mandatory and can not be set to None')
-			if not check_type(value,ARRAY(1,3,'REAL', scope = schema_scope)):
-				self._coords = ARRAY(value)
-			else:
-				self._coords = value
-		return property(**locals())
+	@property
+	def coords(self):
+		return self._coords
+	@coords.setter
+	def coords( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument coords is mandatory and can not be set to None')
+		if not check_type(value,ARRAY(1,3,'REAL', scope = schema_scope)):
+			self._coords = ARRAY(value)
+		else:
+			self._coords = value

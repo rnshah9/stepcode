@@ -28,16 +28,16 @@ class transformation(BaseEntityClass):
 	def __init__( self , rotation, ):
 		self.rotation = rotation
 
-	@apply
-	def rotation():
-		def fget( self ):
-			return self._rotation
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument rotation is mandatory and can not be set to None')
-			if not check_type(value,ARRAY(1,3,ARRAY(1,3,'REAL', scope = schema_scope))):
-				self._rotation = ARRAY(value)
-			else:
-				self._rotation = value
-		return property(**locals())
+	@property
+	def rotation(self):
+		return self._rotation
+	@rotation.setter
+	def rotation( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument rotation is mandatory and can not be set to None')
+		if not check_type(value,ARRAY(1,3,ARRAY(1,3,'REAL', scope = schema_scope))):
+			self._rotation = ARRAY(value)
+		else:
+			self._rotation = value
+

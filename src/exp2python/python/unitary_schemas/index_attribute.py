@@ -43,33 +43,32 @@ class shape_aspect(BaseEntityClass):
 		self.name = name
 		self.of_shape = of_shape
 
-	@apply
-	def name():
-		def fget( self ):
-			return self._name
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument name is mandatory and can not be set to None')
-			if not check_type(value,label):
-				self._name = label(value)
-			else:
-				self._name = value
-		return property(**locals())
+	@property
+	def name(self):
+		return self._name
+	@name.setter
+	def name( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument name is mandatory and can not be set to None')
+		if not check_type(value,label):
+			self._name = label(value)
+		else:
+			self._name = value
 
-	@apply
-	def of_shape():
-		def fget( self ):
-			return self._of_shape
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument of_shape is mandatory and can not be set to None')
-			if not check_type(value,product_definition_shape):
-				self._of_shape = product_definition_shape(value)
-			else:
-				self._of_shape = value
-		return property(**locals())
+	@property
+	def of_shape(self):
+		return self._of_shape
+	@of_shape.setter
+	def of_shape( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument of_shape is mandatory and can not be set to None')
+		if not check_type(value,product_definition_shape):
+			self._of_shape = product_definition_shape(value)
+		else:
+			self._of_shape = value
+
 	def wr1(self):
 		eval_wr1_wr = (SIZEOF(USEDIN(self,'INDEX_ATTRIBUTE.'  +  'ID_ATTRIBUTE.IDENTIFIED_ITEM'))  <=  1)
 		if not eval_wr1_wr:
@@ -91,19 +90,19 @@ class general_datum_reference(shape_aspect):
 		shape_aspect.__init__(self , inherited0__name , inherited1__of_shape , )
 		self.base = base
 
-	@apply
-	def base():
-		def fget( self ):
-			return self._base
-		def fset( self, value ):
-		# Mandatory argument
-			if value==None:
-				raise AssertionError('Argument base is mandatory and can not be set to None')
-			if not check_type(value,datum_or_common_datum):
-				self._base = datum_or_common_datum(value)
-			else:
-				self._base = value
-		return property(**locals())
+	@property
+	def base(self):
+		return self._base
+	@base.setter
+	def base( self, value ):
+	# Mandatory argument
+		if value==None:
+			raise AssertionError('Argument base is mandatory and can not be set to None')
+		if not check_type(value,datum_or_common_datum):
+			self._base = datum_or_common_datum(value)
+		else:
+			self._base = value
+
 	def wr1(self):
 		eval_wr1_wr = (( not ('INDEX_ATTRIBUTE.COMMON_DATUM_LIST'  ==  TYPEOF(self.base)))  or  (self.self.shape_aspect.self.of_shape  ==  self.base[1].self.shape_aspect.self.of_shape))
 		if not eval_wr1_wr:
