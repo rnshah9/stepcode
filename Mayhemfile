@@ -1,0 +1,6 @@
+project: rnshah9/stepcode
+target: stepcode
+
+cmds:
+  - cmd: /repo/build/bin/exp2python @@
+    libfuzzer: false
