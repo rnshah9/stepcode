@@ -1,5 +1,5 @@
 project: rnshah9/stepcode
-target: stepcode
+target: exp2python
 
 cmds:
   - cmd: /repo/build/bin/exp2python @@
