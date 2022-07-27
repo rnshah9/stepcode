@@ -2,5 +2,5 @@ project: stepcode
 target: exp2python
 
 cmds:
-  - cmd: /repo/build/bin/exp2python @@
+  - cmd: /install/bin/exp2python @@
     libfuzzer: false
