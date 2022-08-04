@@ -26,11 +26,14 @@ sectionReader::sectionReader( lazyFileReader * parent, std::ifstream & file, std
     _error = new ErrorDescriptor();
 }
 
+sectionReader::~sectionReader() {
+     delete _error;
+}
 
 std::streampos sectionReader::findNormalString( const std::string & str, bool semicolon ) {
     std::streampos found = -1, startPos = _file.tellg(), nextTry = startPos;
     int i = 0, l = str.length();
-    char c;
+    int c;
 
     //i is reset every time a character doesn't match; if i == l, this means that we've found the entire string
     while( i < l || semicolon ) {
@@ -84,7 +87,7 @@ std::streampos sectionReader::findNormalString( const std::string & str, bool se
 // returns pointer to the contents of a static std::string
 const char * sectionReader::getDelimitedKeyword( const char * delimiters ) {
     static std::string str;
-    char c;
+    int c;
     str.clear();
     str.reserve( 100 );
     skipWS();
@@ -114,7 +117,7 @@ const char * sectionReader::getDelimitedKeyword( const char * delimiters ) {
 /// be the opening parenthesis; otherwise, it is likely to fail.
 ///NOTE *must* check return value!
 std::streampos sectionReader::seekInstanceEnd( instanceRefs ** refs ) {
-    char c;
+    int c;
     int parenDepth = 0;
     while( c = _file.get(), _file.good() ) {
         switch( c ) {
@@ -176,7 +179,7 @@ void sectionReader::locateAllInstances() {
 }
 
 instanceID sectionReader::readInstanceNumber() {
-    char c;
+    int c;
     size_t digits = 0;
     instanceID id = 0;
 
@@ -221,7 +224,7 @@ instanceID sectionReader::readInstanceNumber() {
             _error->UserMsg( "A very large instance ID encountered" );
             _error->DetailMsg( errorMsg.str() );
 
-            delete buffer;
+            delete[] buffer;
             return 0;    
         }
 
@@ -251,7 +254,7 @@ instanceID sectionReader::readInstanceNumber() {
  */
 SDAI_Application_instance * sectionReader::getRealInstance( const Registry * reg, long int begin, instanceID instance,
         const std::string & typeName, const std::string & schName, bool header ) {
-    char c;
+    int c;
     const char * tName = 0, * sName = 0; //these are necessary since typeName and schName are const
     std::string comment;
     Severity sev = SEVERITY_NULL;
